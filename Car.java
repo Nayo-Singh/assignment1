@@ -47,16 +47,16 @@ public abstract class Car implements Movable {
     public void move() {
         switch (direction) {
             case 0:
-                y += currentSpeed;
+                y += (int)currentSpeed;
                 break;
             case 1:
-                x += currentSpeed;
+                x += (int)currentSpeed;
                 break;
             case 2:
-                y -= currentSpeed;
+                y -= (int)currentSpeed;
                 break;
             case 3:
-                x -= currentSpeed;
+                x -= (int)currentSpeed;
                 break;
         }
     }
