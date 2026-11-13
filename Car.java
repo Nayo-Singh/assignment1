@@ -32,6 +32,9 @@ public abstract class Car implements Movable {
         currentSpeed -= speedFactor() * amount;
     }
 
+    public int getX() { return x; }
+    public int getY() { return y; }
+
     public double getCurrentSpeed() {
         return currentSpeed;
     }
