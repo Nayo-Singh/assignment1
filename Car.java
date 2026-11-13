@@ -24,12 +24,21 @@ public abstract class Car implements Movable {
 
     protected abstract double speedFactor();
 
+    public boolean checkInterval(double number){ // checks if number is in the interval 0 - 1
+        if (number >= 0 && number <= 1) return true;
+        else return false;
+    }
     public void gas(double amount) {
-        currentSpeed += speedFactor() * amount;
+        if (checkInterval(amount))
+            currentSpeed += speedFactor() * amount;
+        if (currentSpeed > enginePower) //Checks that the speed does not exceed the enginPower
+            currentSpeed = enginePower;
     }
 
     public void brake(double amount) {
-        currentSpeed -= speedFactor() * amount;
+        if (checkInterval(amount))
+            currentSpeed -= speedFactor() * amount;
+        if (currentSpeed <= 0) currentSpeed = 0; //prevents negative speed
     }
 
     public int getX() { return x; }
